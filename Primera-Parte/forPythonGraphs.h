@@ -5,3 +5,4 @@ using namespace std;
 
 
 void calculateSpace(string postfix_expression);
+string replaceUnicodeCharacters3(const string& input) ;

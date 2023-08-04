@@ -134,7 +134,7 @@ string formatRegEx(const string linea) {
                 }
             }
 
-            if(!ingroup && !isescaped){
+            if((!ingroup|| (ingroup && c1 != ')')) && !isescaped){
                 if(c2=='?'){
                     resultado= "("+resultado+"|ε)";
                 }
@@ -270,7 +270,30 @@ string replaceUnicodeCharacters(const string& input) {
         {"𝑏", "b"},
         {"𝑐", "c"},
         {"𝑑", "d"},
-        {"𝑒", "e"},
+        {"𝑓", "f"},
+        {"𝑔", "g"},
+        {"𝑎𝑧", "az"},
+        {"𝐴𝑍", "AZ"},
+        {"∗", "*"}, // Reemplazar el carácter unicode '∗' con '*'
+    };
+
+    string output = input;
+    for (const auto& entry : unicodeMap) {
+        regex pattern(entry.first);
+        output = regex_replace(output, pattern, entry.second);
+    }
+
+    return output;
+}
+
+string replaceUnicodeCharacters3(const string& input) {
+    // Caracteres Unicode a reemplazar
+    map<string, string> unicodeMap = {
+        {"𝑎", "a"},
+        {"𝑏", "b"},
+        {"𝑐", "c"},
+        {"𝑑", "d"},
+        {"e", "ε"},
         {"𝑓", "f"},
         {"𝑔", "g"},
         {"𝑎𝑧", "az"},

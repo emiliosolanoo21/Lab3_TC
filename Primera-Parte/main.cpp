@@ -21,7 +21,7 @@ int main() {
         if(verify(linea)){
             linea = replaceUnicodeCharacters(linea);
             cout << "Expresión Regular en Infix: " << linea << endl;
-            string postfix = infixToPostfix(linea);
+            string postfix = replaceUnicodeCharacters3(infixToPostfix(linea));
             cout << "Expresión Regular en Postfix: " << postfix << endl;
             cout << "-------------------------" << endl;
 
@@ -34,6 +34,7 @@ int main() {
     archivo.close();
 
     while (!postfixTxt.empty()) {
+        cout<<postfixTxt.top()<<endl;
         calculateSpace(postfixTxt.top());
         postfixTxt.pop();
     }
