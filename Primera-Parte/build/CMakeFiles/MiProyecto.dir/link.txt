@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MiProyecto.dir/main.cpp.o CMakeFiles/MiProyecto.dir/forPostfix.cpp.o CMakeFiles/MiProyecto.dir/forPythonGraphs.cpp.o -o MiProyecto  /usr/lib/libpython3.11.so 
